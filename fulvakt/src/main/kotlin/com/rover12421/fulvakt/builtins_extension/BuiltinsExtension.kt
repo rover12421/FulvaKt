@@ -247,6 +247,7 @@ operator fun FloatArray.get(index: Char): Float = get(index.toInt())
  * 构建一个使用默认值填充的数组
  */
 public fun <T> arrayOfDefaultValue(size: kotlin.Int, defaultValue: T): Array<T> {
+    @Suppress("UNCHECKED_CAST")
     return Array(size, {defaultValue as Any}) as Array<T>
 }
 
@@ -263,7 +264,7 @@ fun Writer.write(char: Char) = this.write(char.toInt())
 /**
  * @since 1.7
  */
-fun AutoCloseable.closeQuietly() {
+fun AutoCloseable?.closeQuietly() {
     try {
         this?.close()
     } catch (e: Throwable) {
@@ -274,7 +275,7 @@ fun AutoCloseable.closeQuietly() {
 /**
  * @since 1.5
  */
-fun Closeable.closeQuietly() {
+fun Closeable?.closeQuietly() {
     try {
         this?.close()
     } catch (e: Throwable) {

@@ -1,1 +1,12 @@
 version = 0.1
+
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.project {
+            description 'Kotlin Builtins Extension'
+            scm {
+                url 'https://github.com/rover12421/FulvaKt/tree/master/fulvakt'
+            }
+        }
+    }
+}

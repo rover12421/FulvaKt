@@ -13,3 +13,4 @@ build/
 *.classpath
 *.settings
 *.setting
+local.properties
