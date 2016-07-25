@@ -66,6 +66,11 @@ subprojects {
         apply plugin: 'signing'
         apply plugin: 'org.jetbrains.dokka'
 
+        /**
+         * 需要在这里添加group,外层的group不生效!!!
+         */
+        group 'com.rover12421'
+
         dokka {
             moduleName = project.name
             outputFormat = 'javadoc'
