@@ -1,0 +1,54 @@
+group 'com.rover12421'
+version '1.0'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer"
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    sourceCompatibility = jdkVer
+    targetCompatibility = jdkVer
+}
+
+subprojects {
+    ext {
+        depends = [
+                junit           : 'junit:junit:4.12',
+                kotlin_stdlib   : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVer",
+        ]
+    }
+
+    dependencies {
+        compile depends.kotlin_stdlib
+
+        testCompile depends.junit
+    }
+}
+
+idea {
+    project {
+        languageLevel = jdkVer
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
+
+// used for official releases only. Please don't use
+task release {
+}
