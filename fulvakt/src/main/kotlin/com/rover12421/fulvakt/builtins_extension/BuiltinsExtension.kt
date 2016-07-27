@@ -1,6 +1,8 @@
 package com.rover12421.fulvakt.builtins_extension
 
+import java.io.ByteArrayOutputStream
 import java.io.Closeable
+import java.io.OutputStream
 import java.io.Writer
 
 /**
@@ -255,6 +257,11 @@ public fun <T> arrayOfDefaultValue(size: kotlin.Int, defaultValue: T): Array<T> 
  * Write.write()
  */
 fun Writer.write(char: Char) = this.write(char.toInt())
+
+/**
+ * Output.write
+ */
+fun OutputStream.write(char: Char) = this.write(char.toInt())
 
 
 /**
