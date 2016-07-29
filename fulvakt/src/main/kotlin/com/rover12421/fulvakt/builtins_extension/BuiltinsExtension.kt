@@ -248,9 +248,9 @@ operator fun FloatArray.get(index: Char): Float = get(index.toInt())
 /**
  * 构建一个使用默认值填充的数组
  */
-public fun <T> arrayOfDefaultValue(size: kotlin.Int, defaultValue: T): Array<T> {
+public inline fun <reified T> arrayOfDefaultValue(size: kotlin.Int, defaultValue: T): Array<T> {
     @Suppress("UNCHECKED_CAST")
-    return Array(size, {defaultValue as Any}) as Array<T>
+    return Array(size, {defaultValue})
 }
 
 /**
