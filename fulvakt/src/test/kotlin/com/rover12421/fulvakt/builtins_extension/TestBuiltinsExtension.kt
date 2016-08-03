@@ -12,4 +12,12 @@ class TestBuiltinsExtension {
         val array = Array(10, {"arrayOfDefaultValue"})
         Assert.assertArrayEquals(array, arrayOfDefaultValue(10, "arrayOfDefaultValue"))
     }
+
+    @Test
+    fun test_null_plus() {
+        val str:String? = null
+        Assert.assertEquals("nullnull", str + str)
+        Assert.assertEquals("null123", str + "123")
+        Assert.assertEquals("123null", "123" + str)
+    }
 }

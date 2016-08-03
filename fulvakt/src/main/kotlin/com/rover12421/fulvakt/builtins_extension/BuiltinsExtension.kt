@@ -213,7 +213,7 @@ infix fun Long.plus(other: Char): Long = this.plus(other.toInt())
 infix fun Double.plus(other: Char): Double = this.plus(other.toInt())
 infix fun Float.plus(other: Char): Float = this.plus(other.toInt())
 
-operator fun Any.plus(other: Any?): String = this.toString() + other?.toString()
+operator fun Any?.plus(other: Any?): String = this?.toString()?:"null" + other?.toString()
 
 /**
  * Array.get(index)
