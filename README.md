@@ -15,7 +15,7 @@
     **Gradle**:
     ``` groovy
     dependencies {
-            compile 'com.rover12421:fulvakt:0.2'
+            compile 'com.rover12421:fulvakt:0.4'
         }
     ```
     
@@ -25,7 +25,7 @@
     <dependency>
       <groupId>com.rover12421</groupId>
       <artifactId>fulvakt</artifactId>
-      <version>0.2</version>
+      <version>0.4</version>
     </dependency>
     ```
 
