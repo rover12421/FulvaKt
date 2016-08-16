@@ -23,4 +23,15 @@ class TestBuiltinsExtension {
         Assert.assertEquals("123null", "123" + str)
         Assert.assertEquals("/null", roots[0] + str)
     }
+
+    @Test
+    fun test_plus_char() {
+        val i: Int = 100
+        val s: Short = 10
+        val c: Char = 'a'
+
+        Assert.assertEquals((i + c.toInt()), i + c)
+        Assert.assertEquals((s + c.toInt()), s + c)
+        Assert.assertEquals((s + c.toInt()), c + s)
+    }
 }

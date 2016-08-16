@@ -200,18 +200,18 @@ infix fun Long.xor(other: Int): Long = this.xor(other.toLong())
 /**
  * plus
  */
-infix fun Char.plus(other: Char): Int = this.toInt().plus(other)
-infix fun Char.plus(other: Byte): Int = this.toInt().plus(other)
-infix fun Char.plus(other: Short): Int = this.toInt().plus(other)
-infix fun Char.plus(other: Int): Int = this.toInt().plus(other)
-infix fun Char.plus(other: Long): Long = this.toLong().plus(other)
+operator infix fun Char.plus(other: Char): Int = this.toInt().plus(other)
+operator infix fun Char.plus(other: Byte): Int = this.toInt().plus(other)
+operator infix fun Char.plus(other: Short): Int = this.toInt().plus(other)
+operator infix fun Char.plus(other: Int): Int = this.toInt().plus(other)
+operator infix fun Char.plus(other: Long): Long = this.toLong().plus(other)
 
-infix fun Int.plus(other: Char): Int = this.plus(other.toInt())
-infix fun Byte.plus(other: Char): Int = this.plus(other.toInt())
-infix fun Short.plus(other: Char): Int = this.plus(other.toInt())
-infix fun Long.plus(other: Char): Long = this.plus(other.toInt())
-infix fun Double.plus(other: Char): Double = this.plus(other.toInt())
-infix fun Float.plus(other: Char): Float = this.plus(other.toInt())
+operator infix fun Byte.plus(other: Char): Int = this.plus(other.toInt())
+operator infix fun Int.plus(other: Char): Int = this.plus(other.toInt())
+operator infix fun Short.plus(other: Char): Int = this.plus(other.toInt())
+operator infix fun Long.plus(other: Char): Long = this.plus(other.toInt())
+operator infix fun Double.plus(other: Char): Double = this.plus(other.toInt())
+operator infix fun Float.plus(other: Char): Float = this.plus(other.toInt())
 
 operator fun Any?.plus(other: Any?): String = (this?.toString()?:"null") + other?.toString()
 
